@@ -40,10 +40,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addItemListener(this::jComboBox1İtemStateChanged);
 
         jButton1.setText("Eleman Ekle");
@@ -79,6 +80,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton10.setText("Eleman Değeri Değiştir");
         jButton10.addActionListener(this::jButton10ActionPerformed);
 
+        jButton11.setText("Eleman Getir");
+        jButton11.addActionListener(this::jButton11ActionPerformed);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,7 +103,9 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton6)
                                 .addGap(46, 46, 46)
-                                .addComponent(lblMesaj, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblMesaj, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -110,7 +118,8 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addComponent(jButton8)
                                     .addComponent(jButton7)
                                     .addComponent(jButton9)
-                                    .addComponent(jButton10))))
+                                    .addComponent(jButton10)
+                                    .addComponent(jButton11))))
                         .addContainerGap(85, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -137,11 +146,14 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMesaj, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMesaj, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
 
@@ -150,6 +162,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //Eleman ekle
+        //şuan için ComboBox Elemanları default olarak
+        //String belirlendi
+        //bundan dolayı ekleme işlemi string olarak yapıyoruz
         jComboBox1.addItem("1");
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -162,17 +178,20 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        //elemanları sil
         jComboBox1.removeAllItems();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        //eleman sayısı bilgisi
         int adet = jComboBox1.getItemCount();
         lblMesaj.setText(String.valueOf(adet));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        //seçili eleman index bilgisi
         int index = jComboBox1.getSelectedIndex();
         lblMesaj.setText(String.valueOf(index));
         
@@ -180,11 +199,14 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        //seçimi iptal et
+        //her hangi bir seçim varsa iptal et
         jComboBox1.setSelectedIndex(-1);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        //seçili elemanı al
         String eleman =(String)jComboBox1.getSelectedItem();
         //eleman =jComboBox1.getSelectedItem().toString();
         lblMesaj.setText(eleman);
@@ -192,7 +214,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        //6.elemanı sil
+        //6.elemanı sil, 6.eleman index?
         jComboBox1.removeItemAt(5);
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -218,6 +240,13 @@ public class NewJFrame extends javax.swing.JFrame {
         //eleman =jComboBox1.getSelectedItem().toString();
         lblMesaj.setText(eleman);
     }//GEN-LAST:event_jComboBox1İtemStateChanged
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        //combo daki index i 2 olan elemanı getir
+        String deger = jComboBox1.getItemAt(2);
+        lblMesaj.setText(deger);
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,6 +276,7 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -256,6 +286,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel lblMesaj;
     // End of variables declaration//GEN-END:variables
 }
