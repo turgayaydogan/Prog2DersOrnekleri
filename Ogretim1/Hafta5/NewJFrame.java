@@ -41,6 +41,9 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -53,6 +56,14 @@ public class NewJFrame extends javax.swing.JFrame {
         btnAktar4 = new javax.swing.JButton();
         btnSolHepsi = new javax.swing.JButton();
         btnSolSecili = new javax.swing.JButton();
+        btnAktar5 = new javax.swing.JButton();
+
+        jMenuItem1.setText("Sil");
+        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
+        jPopupMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("jMenuItem2");
+        jPopupMenu1.add(jMenuItem2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +85,7 @@ public class NewJFrame extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList2.setComponentPopupMenu(jPopupMenu1);
         jScrollPane2.setViewportView(jList2);
 
         jButton3.setText(">");
@@ -86,10 +98,14 @@ public class NewJFrame extends javax.swing.JFrame {
         btnAktar3.addActionListener(this::btnAktar3ActionPerformed);
 
         btnAktar4.setText(">");
+        btnAktar4.addActionListener(this::btnAktar4ActionPerformed);
 
         btnSolHepsi.setText("<<");
 
         btnSolSecili.setText("<");
+
+        btnAktar5.setText(">");
+        btnAktar5.addActionListener(this::btnAktar5ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +124,8 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(btnAktar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAktar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAktar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSolSecili, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSolSecili, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAktar5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(187, Short.MAX_VALUE))
@@ -120,8 +137,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -131,12 +146,17 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAktar3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAktar4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSolSecili)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSolHepsi)
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addComponent(btnAktar4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAktar5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addComponent(btnSolSecili)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSolHepsi)
+                        .addGap(17, 17, 17))
+                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
         );
 
         pack();
@@ -186,6 +206,36 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAktar3ActionPerformed
 
+    private void btnAktar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAktar4ActionPerformed
+        // TODO add your handling code here:
+         for(int i=0;i<jList1.getSelectedIndices().length;i++ ){
+            //int[] secilenler=jList1.getSelectedIndices(); 
+            int siradakiIndex = jList1.getSelectedIndices()[i];
+            model2.addElement(model1.getElementAt(siradakiIndex));
+        }
+         //aktarılanları sil
+         for(int i=jList1.getSelectedIndices().length-1;i>=0;i--){
+              int siradakiIndex = jList1.getSelectedIndices()[i];
+              model1.removeElementAt(siradakiIndex);
+         }
+    }//GEN-LAST:event_btnAktar4ActionPerformed
+
+    private void btnAktar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAktar5ActionPerformed
+        // TODO add your handling code here:
+        do{
+            int siradakiIndex = jList1.getSelectedIndices()[0];
+            model2.addElement(model1.getElementAt(siradakiIndex));
+            model1.removeElementAt(siradakiIndex);
+        }while(jList1.getSelectedIndices().length>0);
+    }//GEN-LAST:event_btnAktar5ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        if(jList2.getSelectedIndex()>=0){
+            model2.removeElementAt(jList2.getSelectedIndex());
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -215,6 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnAktar2;
     private javax.swing.JButton btnAktar3;
     private javax.swing.JButton btnAktar4;
+    private javax.swing.JButton btnAktar5;
     private javax.swing.JButton btnSolHepsi;
     private javax.swing.JButton btnSolSecili;
     private javax.swing.JButton jButton1;
@@ -222,6 +273,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
