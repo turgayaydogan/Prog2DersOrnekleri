@@ -92,6 +92,7 @@ public class NewJFrame2 extends javax.swing.JFrame {
         jPanel1.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5)); // panel tasarım veya kodda ayarlanabilir
         btnAdet++;        
         JButton btnYeni = new JButton("Yeni Buton"+btnAdet);
+        //btnYeni.addActionListener(ev -> butonTikla2(ev));
         btnYeni.addActionListener(ev -> butonTikla(btnYeni));
         jPanel1.add(btnYeni);
                 
@@ -102,6 +103,15 @@ public class NewJFrame2 extends javax.swing.JFrame {
     private void butonTikla(JButton glnButton){
         jLabel1.setText(glnButton.getText());
     }
+    
+     private void butonTikla2(java.awt.event.ActionEvent evt) { 
+         //event tetiklendiğinde
+        //eventi tetikleyen nesnenin bilgileri
+        //bu metoda parametre olarak geliyor
+        JButton  gelenButon = (JButton) evt.getSource();
+        String deger = gelenButon.getText();
+        jLabel1.setText(deger);
+     }
     /**
      * @param args the command line arguments
      */
