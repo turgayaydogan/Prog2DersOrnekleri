@@ -1,0 +1,105 @@
+masa;table
+sandalye;chair
+kapı;door
+pencere;window
+duvar;wall
+tavan;ceiling
+zemin;floor
+halı;carpet
+perde;curtain
+lamba;lamp
+ampul;light bulb
+priz;socket
+anahtar;key
+kilit;lock
+raf;shelf
+dolap;cabinet
+çekmece;drawer
+ayna;mirror
+yatak;bed
+yastık;pillow
+yorgan;quilt
+battaniye;blanket
+çarşaf;sheet
+masa örtüsü;tablecloth
+sehpa;coffee table
+koltuk;sofa
+kanepe;couch
+berjer;armchair
+kitaplık;bookcase
+kitap;book
+defter;notebook
+kalem;pen
+kurşun kalem;pencil
+silgi;eraser
+kalemtıraş;sharpener
+cetvel;ruler
+makas;scissors
+yapıştırıcı;glue
+bant;tape
+zımba;stapler
+kağıt;paper
+dosya;file folder
+çanta;bag
+sırt çantası;backpack
+cüzdan;wallet
+saat;clock
+kol saati;wristwatch
+telefon;phone
+bilgisayar;computer
+klavye;keyboard
+fare;mouse
+ekran;screen
+yazıcı;printer
+hoparlör;speaker
+kulaklık;headphones
+kamera;camera
+televizyon;television
+kumanda;remote control
+radyo;radio
+buzdolabı;refrigerator
+fırın;oven
+ocak;stove
+mikrodalga;microwave
+su ısıtıcısı;kettle
+çaydanlık;teapot
+tencere;pot
+tava;pan
+tabak;plate
+kase;bowl
+bardak;glass
+fincan;cup
+kaşık;spoon
+çatal;fork
+bıçak;knife
+tepsi;tray
+sürahi;pitcher
+şişe;bottle
+kap;container
+çöp kutusu;trash can
+temizlik bezi;cleaning cloth
+süpürge;broom
+faraş;dustpan
+paspas;mop
+kova;bucket
+deterjan;detergent
+sabun;soap
+havlu;towel
+diş fırçası;toothbrush
+diş macunu;toothpaste
+tarak;comb
+fırça;brush
+askı;hanger
+ütü;iron
+ütü masası;ironing board
+çamaşır makinesi;washing machine
+bulaşık makinesi;dishwasher
+klima;air conditioner
+vantilatör;fan
+ısıtıcı;heater
+priz uzatma kablosu;extension cord
+pil;battery
+lamba düğmesi;light switch
+kapı kolu;door handle
+zil;bell
+posta kutusu;mailbox
